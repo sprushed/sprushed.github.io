@@ -404,7 +404,12 @@ rp, rq = 11974933,  405771
 
 <p>The second key idea is the relation between n and p*q. n = (p + rp) * (q + rq) = p * q + p * rq + q * rp + rp * rq. And we observe that p * q is a huge number, comparing to the rest part of n.</p>
 <p>p * q ~ 2^2048, when p * rq + q * rp + rp * rq ~ 2^(1024 + 24) * 2 = 2^1049</p>
-<p>Also we know that p * q is a perfect 4th power of some number(a * b), let's compute the distance between two perfect 4th powers of this order:</p><p>(x + 1)^4 - x^4 = ((x + 1)^2 - x^2) * ((x+1)^2 + x^2) = x * (2*x + 1) * (2*x^2 + x + 1). x = a * b ~ 2^512 => (x + 1)^4 - x^4 ~ 2^512 * 2^513 * (2 * 2^1024 + 2^512 + 1) ~ 2^2050 > 2^1049 ~ p * rq + q * rp + rp * rq</p>Now we expect the round(n^(1/4)) to be the exact product of a and b!!!</p>
+<p>Also we know that p * q is a perfect 4th power of some number(a * b), let's compute the distance between two perfect 4th powers of this order:</p>
+```python
+(x + 1)^4 - x^4 = ((x + 1)^2 - x^2) * ((x+1)^2 + x^2) = x * (2*x + 1) * (2*x^2 + x + 1)
+x = a * b ~ 2^512 => (x + 1)^4 - x^4 ~ 2^512 * 2^513 * (2 * 2^1024 + 2^512 + 1) ~ 2^2050 > 2^1049 ~ p * rq + q * rp + rp * rq
+```
+Now we expect the round(n^(1/4)) to be the exact product of a and b!!!
 
 ```python
 n = 3183573836769699313763043722513486503160533089470716348487649113450828830224151824106050562868640291712433283679799855890306945562430572137128269318944453041825476154913676849658599642113896525291798525533722805116041675462675732995881671359593602584751304602244415149859346875340361740775463623467503186824385780851920136368593725535779854726168687179051303851797111239451264183276544616736820298054063232641359775128753071340474714720534858295660426278356630743758247422916519687362426114443660989774519751234591819547129288719863041972824405872212208118093577184659446552017086531002340663509215501866212294702743
