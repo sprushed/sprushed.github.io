@@ -42,3 +42,5 @@ gem "http_parser.rb", "~> 0.6.0", :platforms => [:jruby]
 gem "webrick", "~> 1.7"
 
 gem "minima", "~> 2.5"
+
+gem "jekyll-include-cache", "~> 0.2.1"
