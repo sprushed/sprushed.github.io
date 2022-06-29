@@ -6,8 +6,6 @@ categories: post
 tags: [posts]
 ---
 
-<h2>ACTF 2022</h2>
-
 ACTF 2022 left overall good impressions with nice task ideas. So we decided to publish our writeups for few categories. Here you can see writeups for crypto challenges.
 
 *Author: [Sarkoxed](https://github.com/Sarkoxed)*
